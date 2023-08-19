@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import * as core from "@actions/core";
 
 // const blurb_title =core.getInput("blurb_title")
-const accessToken = core.getInput("api_key");
+const accessToken = core.getInput("PAT");
 const discussionId = core.getInput("disc_number");
 const updating_body = core.getInput("blurb_body");
 const updatedContent = {
