@@ -20,7 +20,7 @@ const headers = {
 };
 
 fetch(updateUrl, {
-    method: 'PATCH',
+    method: 'PUT',
     headers: headers,
     body: JSON.stringify(updatedContent)
 })
