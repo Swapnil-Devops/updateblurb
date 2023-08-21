@@ -3,13 +3,13 @@ import * as core from "@actions/core";
 
 const accessToken = core.getInput("PAT"); 
 const discussionId = core.getInput("discussionID"); 
-const updating_body = core.getInput("updatedbody");
+const updatingbody = core.getInput("updatedbody");
 
 const graphqlMutation = `
   mutation {
     updateDiscussion(input: {
       discussionId: ${discussionId},
-      body: ${updating_body}
+      body: ${updatingbody}
     }) {
       discussion {
         id
