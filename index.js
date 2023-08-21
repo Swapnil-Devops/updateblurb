@@ -4,6 +4,8 @@ import * as core from "@actions/core";
 const accessToken = core.getInput("PAT"); 
 const discussionId = core.getInput("discussionID"); 
 const updatingbody = core.getInput("updatedbody");
+console.log('discussionId',discussionId);
+console.log('updatingbody',updatingbody);
 
 const graphqlMutation = `
   mutation {
