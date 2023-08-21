@@ -24,8 +24,8 @@ const apiUrl = 'https://api.github.com/graphql';
 
 
 const headers = {
-  Authorization: `Bearer ${accessToken}`,
-  'Content-Type': 'application/json',
+  "Authorization": "Bearer ${accessToken}",
+  "Content-Type": "application/json",
 };
 
 fetch(apiUrl, {
