@@ -24,7 +24,7 @@ const apiUrl = 'https://api.github.com/graphql';
 
 // Set up headers for authentication and content type
 const headers = {
-  Authorization: 'Bearer ${accessToken}',
+  Authorization: `Bearer ${accessToken}`,
   'Content-Type': 'application/json',
 };
 
