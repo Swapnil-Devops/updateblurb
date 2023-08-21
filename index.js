@@ -25,7 +25,7 @@ const apiUrl = 'https://api.github.com/graphql';
 // Set up headers for authentication and content type
 const headers = {
   "Content-Type": "application/json",
-  "Authorization": "Bearer "+accessToken,
+  'Authorization': 'Bearer '+ accessToken,
 };
 
 // Make the GraphQL request using a POST request
