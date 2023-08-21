@@ -1,7 +1,7 @@
 import fetch from "node-fetch"; 
 import * as core from "@actions/core";
 
-const accessToken = "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"; 
+const accessToken = "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"; 
 const discussionId = "D_kwDOKCGw7s4AVF-r"; 
 const updatingbody = " GitHub Actions is a powerful automation tool provided by GitHub. It allows developers to define custom workflows and automate various tasks related to their software development process.";
 console.log('discussionId',discussionId);
