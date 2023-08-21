@@ -1,39 +1,39 @@
-import fetch from "node-fetch";
+import fetch from "node-fetch"; 
 import * as core from "@actions/core";
 
-// const blurb_title =core.getInput("blurb_title")
-const accessToken = core.getInput("PAT");
-const discussionId = core.getInput("disc_number");
-const updating_body = core.getInput("blurb_body");
-const updatedContent = {
-    // title: blurb_title,
-    body: updating_body
-};
+const accessToken = core.getInput("PAT"); 
+const discussionId = core.getInput("discussionId"); 
+const updating_body = core.getInput("updatedbody");
 
-const updateUrl = `https://api.github.com/repos/kiran-godse/comment-workflow/discussions/${discussionId}`;
+const graphqlMutation = `
+  mutation {
+    updateDiscussion(input: {
+      discussionId: "${discussionId}",
+      body: "${updating_body}"
+    }) {
+      discussion {
+        id
+        body
+      }
+    }
+  }
+`;
 
 
-// Set up headers
+const apiUrl = 'https://api.github.com/graphql';
+
+
 const headers = {
-    "Authorization":  "Bearer " + accessToken,
-    "Content-Type": "application/json",
+  Authorization: `Bearer ${accessToken}`,
+  'Content-Type': 'application/json',
 };
 
-fetch(updateUrl, {
-    method: 'PUT',
-    headers: headers,
-    body: JSON.stringify(updatedContent)
+fetch(apiUrl, {
+  method: 'POST',
+  headers: headers,
+  body: JSON.stringify({ query: graphqlMutation }),
 })
 .then(response => {
-    if (response.status === 200) {
-        console.log('Discussion updated successfully.');
-    } else {
-        console.log('Failed to update discussion. Status code:', response.status);
-        return response.json().then(data => {
-            console.log('Response:', data);
-        });
-    }
-})
-.catch(error => {
-    console.error('Error:', error);
+    if (response.status === 200) {
+        console.log('Discussion updated successfully.');}
 });
