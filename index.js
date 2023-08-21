@@ -10,7 +10,7 @@ console.log('updatingbody',updatingbody);
 const graphqlMutation = `
   mutation {
     updateDiscussion(input: {
-      discussionId: ${discussionId},
+      discussionId: "${discussionId}",
       body: ${updatingbody}
     }) {
       discussion {
