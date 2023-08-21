@@ -8,7 +8,7 @@ const updating_body = core.getInput("updatedbody");
 const graphqlMutation = `
   mutation {
     updateDiscussion(input: {
-      discussionId: "${discussionId}",
+      discussionId: ${discussionId},
       body: "${updating_body}"
     }) {
       discussion {
