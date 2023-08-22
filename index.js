@@ -8,17 +8,17 @@ console.log('discussionId', discussionId);
 console.log('updatingbody', updatingbody);
 
 const graphqlMutation = `
-    mutation {
-        updateDiscussion(input: {
-            discussionId: "${discussionId}",
-            body: "${updatingbody}"
-        }) {
-            discussion {
-                id
-                body
-            }
-        }
-    }
+mutation {
+   updateDiscussion(input: {
+      discussionId: "${discussionId}",
+      body: ${JSON.stringify(updatingbody)}
+   }) {
+      discussion {
+         id
+         body
+      }
+   }
+}
 `;
 
 const apiUrl = 'https://api.github.com/graphql';
